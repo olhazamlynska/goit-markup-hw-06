@@ -594,9 +594,16 @@ body {
   padding-left: 16px;
   color: rgba(255, 255, 255, 0.6);
   margin-right: 12px;
+  transition: border var(--transition-duration)
+    var(--transition-timing-function);
+}
+.footer-input:focus,
+.footer-input:hover{
+  border: 1px solid var(--accent);
 }
 
-.footer-btn {
+
+.footer-btn { 
   position: relative;
   display: flex;
 
@@ -613,11 +620,12 @@ body {
   text-align: left;
   padding-left: 29px;
   color: #ffffff;
-  transition: background-color var(--transition-duration) var(--transition-timing-function);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
 }
 .footer-btn:hover,
-.footer-btn:focus{
-background-color: var(--hero-btn-color);
+.footer-btn:focus {
+  background-color: var(--hero-btn-color);
 }
 
 .icon-send {
@@ -713,7 +721,7 @@ background-color: var(--hero-btn-color);
   border-radius: 4px;
   transition: border var(--transition-duration)
     var(--transition-timing-function);
- color: rgba(117, 117, 117, 0.5);
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .modal-name:focus,
@@ -834,8 +842,10 @@ background-color: var(--hero-btn-color);
 }
 
 .checkbox-link {
+  display: inline-block;
   margin-left: 1px;
   color: var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 .send-btn {
   display: flex;
