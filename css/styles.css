@@ -598,12 +598,11 @@ body {
     var(--transition-timing-function);
 }
 .footer-input:focus,
-.footer-input:hover{
+.footer-input:hover {
   border: 1px solid var(--accent);
 }
 
-
-.footer-btn { 
+.footer-btn {
   position: relative;
   display: flex;
 
@@ -790,6 +789,7 @@ body {
 .modal-text {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .label-text {
   width: 100%;
@@ -817,32 +817,50 @@ body {
 .area-text:focus {
   border: 1px solid #2196f3;
 }
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.check-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+}
 .check-text span {
   width: 16px;
   height: 15px;
   border: 2px solid #090b13;
   border-radius: 3px;
   margin-right: 5px;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .check-icon {
   fill: transparent;
   position: absolute;
+  object-fit: contain;
+  top: 0;
+  left: 0;
 }
 
 .modal-check:checked + .check-text span {
   background-color: var(--accent);
   border: none;
 }
-.modal-check:checked + .check-text .check-icon {
+.modal-check:checked + .check-icon {
   fill: #ffffff;
 }
 
 .checkbox-link {
-  display: inline-block;
+  display: inline;
   margin-left: 1px;
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
