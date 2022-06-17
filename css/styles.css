@@ -818,11 +818,17 @@ body {
   border: 1px solid #2196f3;
 }
 .checkbox-field {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 30px;
 }
-
+.check-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .check-text {
   font-family: 'Roboto';
   font-style: normal;
@@ -831,31 +837,37 @@ body {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
 }
-.check-text span {
+.checkbox-span {
   width: 16px;
   height: 15px;
+  position: relative;
   border: 2px solid #090b13;
   border-radius: 3px;
   margin-right: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    border var(--transition-duration) var(--transition-timing-function);
 }
 
 .check-icon {
   fill: transparent;
   position: absolute;
-  object-fit: contain;
   top: 0;
   left: 0;
 }
+.check-input:focus + .check-text span,
+.check-input:hover + .check-text span {
+  border-color: var(--accent);
+}
 
-.modal-check:checked + .check-text span {
+.check-input:checked + .check-text span {
   background-color: var(--accent);
   border: none;
 }
-.modal-check:checked + .check-icon {
+.check-input:checked + .check-text .check-icon {
   fill: #ffffff;
 }
 
@@ -870,10 +882,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 30px;
   min-width: 200px;
   height: 50px;
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: calc(30 / 16);
